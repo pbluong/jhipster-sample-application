@@ -37,8 +37,25 @@ spring:
       indent-output: true
   data:
     mongodb:
+      #uri: mongodb://cs1mongo1a.sgn.secutix.net:27017
       uri: mongodb://localhost:27017
-      database: SampleJHipsterApplication
+      database: stx_ref_data
+      #username: refadmin
+      #password: password
+  datasource:
+    url: jdbc:oracle:thin:@cs1oracle-in02.sgn.secutix.net:1521:IN02
+    username: stxbil_appldev
+    password: dev4secutix
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    type: oracle.jdbc.pool.OracleDataSource
+    #schema: #https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: oracle
+    properties:
+      hibernate:
+        default_schema: STXBIL_PARAM_TMOSA
   mail:
     host: localhost
     port: 25
